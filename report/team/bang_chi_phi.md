@@ -84,5 +84,5 @@ Tất cả là số simulated; việc không thành công tính 12.000 đ.
 
 ## B4 · Nếu phải xem lại tất cả
 
-- Chi phí mỗi việc thành công khi xem lại 100% (`noi_dia` + `hang_nang`), so với 12.000 đ: 11.743 đ, 0,98× (simulated); 948 ca × 5 phút cộng 48 ca làm lại × 9 phút.
-- Kết quả này nói gì về thứ pilot cần học được? Pilot phải đo được ngưỡng tin cậy để bỏ xem lại phần lớn ca; nếu vẫn phải xem lại 100% thì lợi thế gần như bằng 0 (chỉ tiết kiệm 2%).
+- Chi phí mỗi việc thành công khi xem lại 100% (`noi_dia` + `hang_nang`), so với 12.000 đ: **11.743 đ = 0,98×** (simulated) với giả định 9 phút/ca làm lại; nếu dùng trung bình `phut_lam_lai_simulated` (15,3 phút/ca) tăng lên **12.414 đ = 1,03×** (simulated), đắt hơn nhân viên tự làm.
+- Kết quả này nói gì về thứ pilot cần học được? Pilot phải đo được ngưỡng tin cậy để giảm dần tỉ lệ xem lại (và rút ngắn mỗi lần xem lại xuống ≤ 4,8–5,1 phút), vì xem lại 100% thì gần như không tiết kiệm được gì hoặc còn lỗ.

@@ -43,5 +43,5 @@ Số lấy trực tiếp từ bảng độ nhạy (`bang_chi_phi.md`).
 | Rủi ro | Tác động đã tính | Dấu hiệu theo dõi | Hành động | Người phụ trách |
 | --- | --- | --- | --- | --- |
 | Số ca làm lại tăng gấp đôi | +51,8%, tăng từ 4.472 đ lên 6.787 đ/việc (simulated) | Tỉ lệ làm lại theo tuần > 7% (đợt chạy thử: 4,9% trong phạm vi) | Thu hẹp về `noi_dia`, rà soát 20 trace làm lại gần nhất | PM trợ lý hoàn phí |
-| Phải xem lại 100% kéo dài | 11.743 đ = 0,98× nhân viên (simulated) với 9 phút làm lại | % yêu cầu được xem lại còn > 50% cuối bước rollout 0.25 | Giảm tỉ lệ xem lại theo bậc khi tỉ lệ sửa + bỏ < 15% | Trưởng nhóm CSKH |
+| Phải xem lại 100% kéo dài | 11.743 đ = 0,98× (với 9 phút làm lại) hoặc 12.414 đ = 1,03× nếu làm lại 15,3 phút như trung bình dữ liệu (simulated) | % yêu cầu được xem lại còn > 50% cuối bước rollout 0.25 | Giảm tỉ lệ xem lại theo bậc khi tỉ lệ sửa + bỏ < 15% và rút thời gian xem lại ≤ 4,8 phút | Trưởng nhóm CSKH |
 | Khối lượng thấp hơn dự kiến | Chi phí cố định 40 triệu/tháng: +1.185 đ/việc ở 45.000 yc/tháng, +2.370 đ/việc nếu còn một nửa (simulated) | Số việc thành công theo tuần < 50% kế hoạch | Tạm dừng mở rộng pilot, rà soát hợp đồng chi phí cố định | PM trợ lý hoàn phí |
