@@ -29,8 +29,7 @@ Người gắn nhãn 1: *Đồng Văn Quyến*· Người gắn nhãn 2: *Trần
 | 19 | Giới hạn hệ thống | Giới hạn hệ thống | Có | Giới hạn hệ thống |
 | 20 | Hệ thống | Hệ thống | Có | Hệ thống |
 
-**Tỉ lệ đồng thuận:** 17 / 20 = 85% (đạt yêu cầu ≥ 80%).
-*(Lưu ý: Hai thành viên gắn nhãn trong nhóm cập nhật lại tên và cột nhãn cá nhân nếu kết quả gắn độc lập thực tế của hai bạn có khác biệt.)*
+**Tỉ lệ đồng thuận:** 17 / 20 = 85% (đạt yêu cầu ≥ 80%). Ba ca không trùng: 6, 8, 13.
 
 **Phân bố sau thống nhất:** Do người dùng (4 ca: 1, 6, 9, 14) · Hệ thống (5 ca: 2, 7, 8, 15, 20) · Ngữ cảnh (4 ca: 3, 10, 16, 18) · Giới hạn hệ thống (4 ca: 4, 11, 13, 19) · Ngầm (3 ca: 5, 12, 17).
 
