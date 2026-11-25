@@ -4,7 +4,10 @@ Không cần khoá API. Điền các chỗ ghi VIẾT Ở ĐÂY (đánh dấu TO
 Bản gốc chưa sửa nằm ở lab13_starter.py.
 """
 import math
+from statistics import NormalDist
 import pandas as pd
+from statsmodels.stats.proportion import proportion_effectsize
+from statsmodels.stats.power import NormalIndPower
 
 # Bảng giá GIẢ ĐỊNH của lab (không phải giá thật của nhà cung cấp nào)
 GIA_VAO = 26        # đồng cho 1.000 token đầu vào
@@ -143,6 +146,55 @@ def b_do_nhay(runs, reqs):
           f'cps={tong / tc:,.0f} ({tong / tc / BASELINE:.2f}x)')
 
 
+def co_mau(p1, p2, alpha=0.05, power=0.8):
+    """Cỡ mẫu mỗi nhóm (so hai tỉ lệ) theo công thức NormalDist."""
+    za = NormalDist().inv_cdf(1 - alpha / 2)
+    zb = NormalDist().inv_cdf(power)
+    pb = (p1 + p2) / 2
+    return math.ceil((za * math.sqrt(2 * pb * (1 - pb))
+                      + zb * math.sqrt(p1 * (1 - p1) + p2 * (1 - p2))) ** 2 / (p2 - p1) ** 2)
+
+
+def d_co_mau(reqs):
+    """CP4 · Nhiệm vụ D: tính 5 câu D1, power ở mức 5 điểm và tỉ lệ mở lại hiện tại."""
+    print('\n== D1 · Cỡ mẫu pilot (p1=0,70; alpha=0,05; power=0,80; ICC=0,02) ==')
+    icc = 0.02
+    n_5 = co_mau(0.70, 0.75)
+    de_b = 1 + (75 - 1) * icc
+    n_b = math.ceil(n_5 * de_b)
+    nguoi_moi_nhom = math.ceil(n_b / 75)
+    print(f'a) Theo yêu cầu (MDE +5đ): n = {n_5:,} mỗi nhóm')
+    print(f'b) Theo nhân viên m=75: DE = {de_b:.2f}, n = {n_b:,}/nhóm ({nguoi_moi_nhom} người/nhóm, tổng {nguoi_moi_nhom * 2} > 40)')
+    print(f'c) 20 nhân viên/nhóm: giới hạn c/ICC = {20 / icc:,.0f} < {n_5:,} (không đạt)')
+    print(f'd) 6 depot/nhóm: giới hạn c/ICC = {6 / icc:,.0f} < {n_5:,} (không đạt)')
+
+    n_6 = co_mau(0.70, 0.76)
+    m_min = math.ceil(n_6 * (1 - icc) / (20 - n_6 * icc))
+    de_e = 1 + (m_min - 1) * icc
+    power_5 = NormalIndPower().power(
+        effect_size=proportion_effectsize(0.70, 0.75),
+        nobs1=n_6, alpha=0.05, ratio=1.0
+    )
+    print(f'e) MDE +6đ (n={n_6:,}/nhóm), 20 người/nhóm: m >= {m_min}, DE = {de_e:.2f}; power ở +5đ = {power_5:.2f}')
+
+    pv = reqs[reqs.loai.isin(PHAM_VI)]
+    print(f'Tỉ lệ mo_lai_trong_7_ngay hiện tại: toàn bộ = {reqs.mo_lai_trong_7_ngay.mean():.2%} '
+          f'({int(reqs.mo_lai_trong_7_ngay.sum())}/{len(reqs)}), '
+          f'phạm vi = {pv.mo_lai_trong_7_ngay.mean():.2%} ({int(pv.mo_lai_trong_7_ngay.sum())}/{len(pv)})')
+
+
+def e1_chi_so(reqs):
+    """CP5 · Nhiệm vụ E1: tính thử 3 chỉ số trên 1.200 yêu cầu."""
+    print('\n== E1 · Chỉ số đợt chạy thử (1.200 yêu cầu) ==')
+    chinh_mask = (reqs.dong_trong_24h == 1) & (reqs.mo_lai_trong_7_ngay == 0)
+    xem = reqs[reqs.duoc_xem_lai == 1]
+    bo_qua_mask = xem.quyet_dinh_xem_lai.isin(['sua', 'bo'])
+    an_toan_mask = reqs.mo_lai_trong_7_ngay == 1
+    print(f'Chính (đóng 24h, không mở lại 7 ngày): {chinh_mask.mean():.2%} ({int(chinh_mask.sum())}/{len(reqs)})')
+    print(f'Dùng (bỏ qua gợi ý sua+bo):            {bo_qua_mask.mean():.2%} ({int(bo_qua_mask.sum())}/{len(xem)})')
+    print(f'An toàn (mở lại trong 7 ngày):         {an_toan_mask.mean():.2%} ({int(an_toan_mask.sum())}/{len(reqs)})')
+
+
 if __name__ == '__main__':
     runs = pd.read_csv('logix_runs.csv')
     reqs = pd.read_csv('logix_requests.csv', keep_default_na=False)
@@ -153,6 +205,5 @@ if __name__ == '__main__':
     a3_theo_loai(runs, reqs)   # CP1 · A3
     a4_co_dinh(runs, reqs)     # CP1 · A4
     b_do_nhay(runs, reqs)      # CP2 · B1–B4
-    # TODO CP4 · Nhiệm vụ D: cỡ mẫu.
-    #   from statsmodels.stats.proportion import proportion_effectsize
-    #   from statsmodels.stats.power import NormalIndPower
+    d_co_mau(reqs)             # CP4 · D1, D3
+    e1_chi_so(reqs)            # CP5 · E1

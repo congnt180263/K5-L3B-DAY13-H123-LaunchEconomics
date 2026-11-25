@@ -19,16 +19,16 @@ LogiX-VN có 12 depot, khoảng 40 nhân viên CSKH và nhận khoảng 1.500 y�
 
 ## Năm nhiệm vụ
 
-| Giờ | Checkpoint · Nhiệm vụ | Thời gian | Sản phẩm |
-| --- | --- | --- | --- |
-| 14:00 | Chia nhóm, cài đặt, chạy thử file khởi đầu | 10 phút | |
-| 14:10 | **CP1 · A · Mô hình chi phí mỗi việc thành công** | 40 + 3 phút | `src/lab13.py`, `report/team/bang_chi_phi.md` |
-| 14:53 | **CP2 · B · Bảng độ nhạy** | 25 + 2 phút | `report/team/bang_chi_phi.md` |
-| 15:35 | **CP3 · C · Bảng lỗi và cách khắc phục** | 30 + 3 phút | `report/team/bang_loi.md` |
-| 16:08 | **CP4 · D · pilot_plan.yaml** | 25 + 3 phút | `report/team/pilot_plan.yaml` |
+| Giờ  | Checkpoint · Nhiệm vụ                                            | Thời gian   | Sản phẩm                                                    |
+| ----- | ------------------------------------------------------------------- | ------------ | ------------------------------------------------------------- |
+| 14:00 | Chia nhóm, cài đặt, chạy thử file khởi đầu                 | 10 phút     |                                                               |
+| 14:10 | **CP1 · A · Mô hình chi phí mỗi việc thành công**    | 40 + 3 phút | `src/lab13.py`, `report/team/bang_chi_phi.md`             |
+| 14:53 | **CP2 · B · Bảng độ nhạy**                              | 25 + 2 phút | `report/team/bang_chi_phi.md`                               |
+| 15:35 | **CP3 · C · Bảng lỗi và cách khắc phục**              | 30 + 3 phút | `report/team/bang_loi.md`                                   |
+| 16:08 | **CP4 · D · pilot_plan.yaml**                               | 25 + 3 phút | `report/team/pilot_plan.yaml`                               |
 | 16:36 | **CP5 · E · Chỉ số, rủi ro kinh tế, hồ sơ launch v0** | 20 + 4 phút | `report/team/chi_so.md`, `report/team/ho_so_launch_v0.md` |
-| 17:00 | **CP5 · Duyệt chéo Gate 2a**: nhóm n chấm nhóm n + 1 | 45 phút | `report/team/phieu_cham.md` |
-| 17:45 | Đóng gói, commit, push | 15 phút | |
+| 17:00 | **CP5 · Duyệt chéo Gate 2a**: nhóm n chấm nhóm n + 1    | 45 phút     | `report/team/phieu_cham.md`                                 |
+| 17:45 | Đóng gói, commit, push                                           | 15 phút     |                                                               |
 
 Giải lao 15:20–15:35. Chi tiết từng checkpoint: [CHECKPOINTS.md](CHECKPOINTS.md).
 
@@ -69,13 +69,13 @@ Trong lúc làm: [docs/Lab13_Huong_dan_chi_tiet_buoi_chieu.md](docs/Lab13_Huong_
 
 ## Cấu trúc repo
 
-| Đường dẫn | Nội dung |
-| --- | --- |
-| `README.md`, `RULES.md`, `CHECKPOINTS.md`, `RUBRIC.md`, `SUBMISSION.md` | Đề bài, luật, checkpoint, cách chấm, cách nộp |
-| `TEAM.md` | Thông tin nhóm, thành viên, vai và đóng góp |
-| `src/` | Bài làm `lab13.py` (học viên viết vào đây), bản gốc `lab13_starter.py`, hai file CSV, `requirements.txt` |
-| `docs/` | Dữ liệu và công thức, hướng dẫn chi tiết, đề bài gốc (docx), slide |
-| `report/team/` | Mẫu các file hồ sơ nhóm phải nộp và báo cáo từng thành viên |
+| Đường dẫn                                                                     | Nội dung                                                                                                                |
+| --------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| `README.md`, `RULES.md`, `CHECKPOINTS.md`, `RUBRIC.md`, `SUBMISSION.md` | Đề bài, luật, checkpoint, cách chấm, cách nộp                                                                    |
+| `TEAM.md`                                                                       | Thông tin nhóm, thành viên, vai và đóng góp                                                                      |
+| `src/`                                                                          | Bài làm `lab13.py` (học viên viết vào đây), bản gốc `lab13_starter.py`, hai file CSV, `requirements.txt` |
+| `docs/`                                                                         | Dữ liệu và công thức, hướng dẫn chi tiết, đề bài gốc (docx), slide                                          |
+| `report/team/`                                                                  | Mẫu các file hồ sơ nhóm phải nộp và báo cáo từng thành viên                                                 |
 
 ## Báo cáo phải nộp
 
