@@ -144,6 +144,10 @@ def b_do_nhay(runs, reqs):
     tc = int((pv.ket_qua == 'thanh_cong').sum())
     print(f'có ok={co_ok} làm lại={so_lam_lai} token+tool={tien_may:,.0f} tổng={tong:,.0f} '
           f'cps={tong / tc:,.0f} ({tong / tc / BASELINE:.2f}x)')
+    tb_lam_lai = reqs.loc[reqs.ket_qua == 'lam_lai', 'phut_lam_lai_simulated'].mean()
+    tong_tb = co_ok * 5 * LUONG_PHUT + so_lam_lai * tb_lam_lai * LUONG_PHUT + tien_may
+    print(f'theo trung bình dữ liệu ({tb_lam_lai:.1f} phút/ca): tổng={tong_tb:,.0f} '
+          f'cps={tong_tb / tc:,.0f} ({tong_tb / tc / BASELINE:.2f}x)')
 
 
 def co_mau(p1, p2, alpha=0.05, power=0.8):
